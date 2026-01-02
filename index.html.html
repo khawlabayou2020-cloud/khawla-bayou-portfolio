@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= CSS ================= -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Contact form */
+    input, textarea, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #162d6b;
+    }
+
+    footer {
+      background-color: #e5e7eb;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HTML ================= -->
+
+  <header>
+    <h1>My Portfolio Website</h1>
+    <p>Web Applications Assignment</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+      This is a simple portfolio website created using HTML, CSS, and JavaScript.
+      It demonstrates basic web development concepts such as layout, styling,
+      responsiveness, and interactivity.
+    </p>
+  </section>
+
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript Basics</li>
+      <li>Responsive Web Design</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="card">
+    <h2>Projects</h2>
+    <p>
+      Project 1: Personal Portfolio Website<br>
+      Project 2: Simple Contact Form with JavaScript Validation
+    </p>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <p id="feedback"></p>
+  </section>
+
+  <footer>
+    © 2026 – Web Applications Project
+  </footer>
+
+  <!-- ================= JavaScript ================= -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const feedback = document.getElementById("feedback");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop page refresh
+
+      const name = document.getElementById("name").value;
+
+      feedback.textContent = "Thank you, " + name + "! Your message has been sent.";
+      feedback.style.color = "green";
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
